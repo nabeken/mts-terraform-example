@@ -24,6 +24,10 @@ resource "aws_elb" "mts-elb" {
 
   cross_zone_load_balancing = true
 
+  instances = [
+    "${aws_instance.mts-web-1a.id}",
+  ]
+
   tags {
     Name = "mts-elb"
   }
