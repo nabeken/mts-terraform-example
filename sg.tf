@@ -12,8 +12,8 @@ resource "aws_security_group" "elb" {
 
   egress {
     protocol = "tcp"
-    from_port = 8000
-    to_port = 8000
+    from_port = 80
+    to_port = 80
     cidr_blocks = [
       "${aws_subnet.elb-1a.cidr_block}",
       "${aws_subnet.elb-1c.cidr_block}",
@@ -32,8 +32,8 @@ resource "aws_security_group" "web" {
 
   ingress {
     protocol = "tcp"
-    from_port = 8000
-    to_port = 8000
+    from_port = 80
+    to_port = 80
     cidr_blocks = [
       "${aws_subnet.elb-1a.cidr_block}",
       "${aws_subnet.elb-1c.cidr_block}",
