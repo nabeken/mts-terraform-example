@@ -1,0 +1,4 @@
+*.swp
+*.tfvars
+*.tfstate
+*.tfstate.backup
