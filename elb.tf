@@ -10,6 +10,7 @@ resource "aws_elb" "mts-elb" {
     instance_port = 80
     instance_protocol = "http"
     lb_port = 80
+    lb_port = "80"
     lb_protocol = "http"
   }
 
