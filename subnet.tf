@@ -15,12 +15,3 @@ resource "aws_subnet" "web-1a" {
     Name = "mts-subnet-web-1a"
   }
 }
-
-resource "aws_subnet" "db-1a" {
-  vpc_id = "${aws_vpc.mts-example.id}"
-  availability_zone = "ap-northeast-1a"
-  cidr_block = "10.0.5.0/24"
-  tags {
-    Name = "mts-subnet-db-1a"
-  }
-}
