@@ -2,7 +2,6 @@ resource "aws_elb" "mts-elb" {
   name = "mts-elb"
   subnets = [
     "${aws_subnet.elb-1a.id}",
-    "${aws_subnet.elb-1c.id}",
   ]
 
   security_groups = ["${aws_security_group.elb.id}"]
