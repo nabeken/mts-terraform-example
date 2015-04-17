@@ -16,7 +16,6 @@ resource "aws_security_group" "elb" {
     to_port = 80
     cidr_blocks = [
       "${aws_subnet.web-1a.cidr_block}",
-      "${aws_subnet.web-1c.cidr_block}",
     ]
   }
 
@@ -36,7 +35,6 @@ resource "aws_security_group" "web" {
     to_port = 80
     cidr_blocks = [
       "${aws_subnet.elb-1a.cidr_block}",
-      "${aws_subnet.elb-1c.cidr_block}",
     ]
   }
 
@@ -63,7 +61,6 @@ resource "aws_security_group" "db" {
     to_port = 5433
     cidr_blocks = [
       "${aws_subnet.web-1a.cidr_block}",
-      "${aws_subnet.web-1c.cidr_block}",
     ]
   }
 
@@ -73,7 +70,6 @@ resource "aws_security_group" "db" {
     to_port = 65535
     cidr_blocks = [
       "${aws_subnet.web-1a.cidr_block}",
-      "${aws_subnet.web-1c.cidr_block}",
     ]
   }
 
