@@ -49,31 +49,3 @@ resource "aws_security_group" "web" {
     Name = "mts-web"
   }
 }
-
-resource "aws_security_group" "db" {
-  name = "mts-db"
-  description = "Allow traffic for db"
-  vpc_id = "${aws_vpc.mts-example.id}"
-
-  ingress {
-    protocol = "tcp"
-    from_port = 5432
-    to_port = 5433
-    cidr_blocks = [
-      "${aws_subnet.web-1a.cidr_block}",
-    ]
-  }
-
-  egress {
-    protocol = "tcp"
-    from_port = 0
-    to_port = 65535
-    cidr_blocks = [
-      "${aws_subnet.web-1a.cidr_block}",
-    ]
-  }
-
-  tags {
-    Name = "mts-db"
-  }
-}
